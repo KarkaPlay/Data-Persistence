@@ -9,6 +9,7 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager Instance;
     public InputField inputField;
+    public Text bestScoreText;
 
     public string currentPlayerName;
     public int currentPlayerHighestScore = 0;
@@ -34,6 +35,7 @@ public class DataManager : MonoBehaviour
     {
         currentPlayerName = playerData.playerName;
         currentPlayerHighestScore = playerData.highestScore;
+        bestScoreText.text = $"{currentPlayerName} : Best Score: {currentPlayerHighestScore}";
     }
 
     public void SetPath()
@@ -49,6 +51,16 @@ public class DataManager : MonoBehaviour
         public int highestScore;
     }
 
+    public void NewPlayer()
+    {
+        SetPath();
+        PlayerData playerData = new PlayerData { highestScore = 0, playerName = currentPlayerName};
+
+        string json = JsonUtility.ToJson(playerData);
+        File.WriteAllText(_path, json);
+        LoadData();
+    }
+
     public void SaveData()
     {
         PlayerData playerData = new PlayerData { highestScore = currentPlayerHighestScore, playerName = currentPlayerName};
@@ -59,6 +71,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadData()
     {
+        SetPath();
         if (File.Exists(_path))
         {
             string json = File.ReadAllText(_path);

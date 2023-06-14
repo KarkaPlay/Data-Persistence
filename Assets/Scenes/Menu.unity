@@ -487,18 +487,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1494119733}
-        m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
-        m_MethodName: SaveData
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &364732742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,18 +693,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
         m_MethodName: set_interactable
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1494119733}
-        m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
-        m_MethodName: LoadData
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1187,6 +1163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6ba79cedcd36543a6a9f92b1a2a196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newButton: {fileID: 364732741}
+  loadButton: {fileID: 806937315}
 --- !u!1 &1494119731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,6 +1210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 1652152729}
+  bestScoreText: {fileID: 2016552227}
   currentPlayerName: 
   currentPlayerHighestScore: 0
   _path: 
@@ -1246,7 +1225,7 @@ GameObject:
   - component: {fileID: 1598375630}
   - component: {fileID: 1598375631}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: New and Load
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
